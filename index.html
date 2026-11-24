@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BlockBase — Minecraft guides, crafting recipes, server discovery and quizzes.">
+<title>BlockBase — Your Minecraft Hub</title>
+<style>
+:root{--bg:#090d0b;--panel:#111915;--panel2:#17221b;--line:#26372c;--green:#7cff6b;--green2:#35c94b;--muted:#9aab9e;--white:#f2f8f2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#1d3a26 0,transparent 34%),var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:5;background:#090d0beF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.6px;font-size:21px}.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(145deg,#a0ff7c,#25a943);display:grid;place-items:center;color:#071108;font-size:22px;box-shadow:0 0 24px #5aff5933}.brand span{color:var(--green)}
+.links{display:flex;gap:25px;color:#b6c4b9;font-size:14px}.links a:hover{color:var(--green)}.nav-right{display:flex;align-items:center;gap:10px}.status{font-size:11px;color:var(--green);border:1px solid #315a37;padding:7px 10px;border-radius:99px;background:#102016}
+.menu{display:none;background:none;color:white;border:0;font-size:24px}
+.hero{padding:76px 0 55px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+h1{font-size:clamp(43px,6vw,72px);line-height:.99;letter-spacing:-3.8px;margin:18px 0}.gradient{background:linear-gradient(90deg,#f4fff3,#86ff76 65%,#45d65d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:560px;color:var(--muted);font-size:17px;line-height:1.7}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.btn{border:1px solid var(--line);padding:12px 17px;border-radius:10px;font-weight:750;font-size:14px;cursor:pointer;transition:.2s}.primary{background:var(--green);color:#081009;border-color:var(--green)}.primary:hover{background:#a1ff91;transform:translateY(-2px)}.secondary{background:#111a14;color:#e9f5eb}.secondary:hover{border-color:var(--green);color:var(--green)}
+.hero-art{min-height:330px;border:1px solid #34513a;border-radius:22px;background:linear-gradient(145deg,#172b1c,#0c130e 70%);position:relative;overflow:hidden;display:grid;place-items:center;box-shadow:0 25px 80px #0008}.hero-art:before,.hero-art:after{content:"";position:absolute;width:260px;height:260px;border:1px solid #83ff6b22;transform:rotate(45deg);border-radius:28px}.hero-art:after{width:180px;height:180px}
+.block-scene{position:relative;z-index:1;display:flex;align-items:end;gap:10px;transform:rotate(-8deg)}.cube{width:95px;height:95px;position:relative;filter:drop-shadow(0 20px 20px #0008)}.cube .top{position:absolute;top:0;left:0;width:95px;height:35px;background:#8ce56b;clip-path:polygon(50% 0,100% 35%,50% 100%,0 35%)}.cube .left{position:absolute;top:17px;left:0;width:48px;height:78px;background:#805b39;clip-path:polygon(0 0,100% 35%,100% 100%,0 65%)}.cube .right{position:absolute;top:17px;right:0;width:48px;height:78px;background:#5d422c;clip-path:polygon(0 35%,100% 0,100% 65%,0 100%)}.cube.grass .left,.cube.grass .right{background:#397d36}.cube.grass .top{background:#8df26a}.cube.small{transform:scale(.72);transform-origin:bottom}.cube.tall{transform:scale(1.2);transform-origin:bottom}
+.art-label{position:absolute;bottom:20px;left:22px;color:#a9c6ad;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0 62px}.stat{background:#101812;border:1px solid var(--line);padding:17px;border-radius:13px}.stat strong{font-size:23px;color:var(--green);display:block}.stat small{color:var(--muted)}
+section{padding:22px 0 48px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.section-head h2{font-size:27px;letter-spacing:-1px;margin:0}.section-head p{color:var(--muted);margin:7px 0 0;font-size:14px}.search{background:#101812;border:1px solid var(--line);color:white;border-radius:10px;padding:11px 13px;min-width:220px;outline:none}.search:focus{border-color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:linear-gradient(150deg,#152019,#101612);border:1px solid var(--line);border-radius:15px;padding:19px;transition:.2s;min-height:180px}.card:hover{transform:translateY(-4px);border-color:#5b995e;box-shadow:0 15px 35px #0004}.card-top{display:flex;justify-content:space-between;align-items:center}.emoji{font-size:26px}.tag{font-size:10px;color:var(--green);background:#1b3220;border:1px solid #2e5534;border-radius:99px;padding:5px 8px;text-transform:uppercase;letter-spacing:.7px}.card h3{margin:16px 0 7px;font-size:17px}.card p{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 14px}.read{font-size:12px;color:var(--green);font-weight:800}
+.recipe-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.recipe{background:#111a14;border:1px solid var(--line);border-radius:13px;padding:15px;text-align:center}.recipe .item{font-size:31px}.recipe strong{display:block;margin:9px 0 4px;font-size:13px}.recipe small{color:var(--muted)}
+.server{display:flex;align-items:center;justify-content:space-between;gap:15px;background:#111a14;border:1px solid var(--line);padding:17px;border-radius:13px;margin-bottom:10px}.server-left{display:flex;align-items:center;gap:13px}.server-icon{width:42px;height:42px;border-radius:11px;background:#203525;display:grid;place-items:center;font-size:20px}.server h3{font-size:14px;margin:0 0 4px}.server small{color:var(--muted)}.online{font-size:12px;color:var(--green);white-space:nowrap}
+.quizbox{background:linear-gradient(120deg,#183321,#111a14);border:1px solid #345b3a;border-radius:17px;padding:24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.quizbox h3{margin:0 0 7px;font-size:21px}.quizbox p{margin:0;color:#b0c3b2;font-size:14px}.quiz-actions{display:flex;gap:9px;flex-wrap:wrap}.quiz-result{color:var(--green);font-size:13px;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.notice{color:#84968a;font-size:11px;margin-top:15px;line-height:1.5}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:52px}.hero-art{min-height:260px}.grid{grid-template-columns:repeat(2,1fr)}.recipe-list{grid-template-columns:repeat(2,1fr)}.links{display:none}.menu{display:block}.status{display:none}}
+@media(max-width:520px){.wrap{width:min(100% - 28px,1160px)}h1{letter-spacing:-2.4px}.stats{gap:7px}.stat{padding:12px}.stat strong{font-size:19px}.grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.search{width:100%}.quizbox{grid-template-columns:1fr}.server{align-items:flex-start}.online{white-space:normal}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#"><span class="logo">▦</span>BLOCK<span>BASE</span></a>
+  <nav class="links"><a href="#guides">Guides</a><a href="#recipes">Recipes</a><a href="#servers">Servers</a><a href="#quiz">Quiz</a></nav>
+  <div class="nav-right"><span class="status">● PLAYER HUB ONLINE</span><button class="menu" aria-label="Menu" onclick="document.querySelector('.links').style.display=document.querySelector('.links').style.display==='flex'?'none':'flex'">☰</button></div>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> THE ULTIMATE PLAYER HUB</div>
+      <h1>LEVEL UP YOUR<br><span class="gradient">MINECRAFT</span><br>GAME.</h1>
+      <p class="lead">Your base for better builds, smarter survival, crafting know-how and finding your next server. Everything a player needs, in one place.</p>
+      <div class="actions"><a class="btn primary" href="#guides">Explore the hub ↗</a><a class="btn secondary" href="#recipes">Browse recipes</a></div>
+    </div>
+    <div class="hero-art" aria-label="Decorative block artwork">
+      <div class="block-scene">
+        <div class="cube small"><i class="top"></i><i class="left"></i><i class="right"></i></div>
+        <div class="cube grass tall"><i class="top"></i><i class="left"></i><i class="right"></i></div>
+        <div class="cube"><i class="top"></i><i class="left"></i><i class="right"></i></div>
+      </div><div class="art-label">BUILD • EXPLORE • SURVIVE</div>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>24/7</strong><small>Knowledge hub</small></div>
+    <div class="stat"><strong>100%</strong><small>Player focused</small></div>
+    <div class="stat"><strong>∞</strong><small>Ways to explore</small></div>
+  </div>
+  <section id="guides">
+    <div class="section-head"><div><h2>Explore the hub</h2><p>Guides for every kind of player.</p></div><input id="guideSearch" class="search" placeholder="Search guides..." aria-label="Search guides"></div>
+    <div class="grid" id="guideGrid">
+      <article class="card" data-search="survival beginner first night tools shelter"><div class="card-top"><span class="emoji">🌲</span><span class="tag">Survival</span></div><h3>Survive Your First Night</h3><p>Gather wood, craft basic tools, find food and build a safe shelter before sunset.</p><a class="read" href="#recipes">START HERE →</a></article>
+      <article class="card" data-search="pvp combat sword shield strategy"><div class="card-top"><span class="emoji">⚔️</span><span class="tag">Combat</span></div><h3>Get Better at PvP</h3><p>Practice movement, timing, spacing and smart use of your equipment.</p><a class="read" href="#quiz">TEST YOUR SKILLS →</a></article>
+      <article class="card" data-search="building house base design"><div class="card-top"><span class="emoji">🏡</span><span class="tag">Building</span></div><h3>Build a Better Base</h3><p>Use depth, varied materials, lighting and a clear shape to improve your builds.</p><a class="read" href="#recipes">GET INSPIRED →</a></article>
+      <article class="card" data-search="redstone beginner circuits mechanisms"><div class="card-top"><span class="emoji">🔴</span><span class="tag">Redstone</span></div><h3>Redstone Basics</h3><p>Learn how power, repeaters and simple circuits can automate your world.</p><a class="read" href="#quiz">LEARN THE BASICS →</a></article>
+      <article class="card" data-search="mining diamonds ores cave safety"><div class="card-top"><span class="emoji">⛏️</span><span class="tag">Exploration</span></div><h3>Smarter Mining</h3><p>Prepare food, torches and tools, mark your route and stay alert underground.</p><a class="read" href="#recipes">PACK YOUR GEAR →</a></article>
+      <article class="card" data-search="enchanting experience books anvil"><div class="card-top"><span class="emoji">✨</span><span class="tag">Progression</span></div><h3>Enchanting Explained</h3><p>Understand enchantment tables, bookshelves, experience and anvils.</p><a class="read" href="#quiz">CHECK YOUR KNOWLEDGE →</a></article>
+    </div><p id="noResults" class="notice" hidden>No matching guides. Try another search.</p>
+  </section>
+  <section id="recipes">
+    <div class="section-head"><div><h2>Quick crafting corner</h2><p>Some essential items to get your adventure started.</p></div></div>
+    <div class="recipe-list">
+      <div class="recipe"><div class="item">🪵</div><strong>Planks</strong><small>1 log → 4 planks</small></div>
+      <div class="recipe"><div class="item">🛠️</div><strong>Crafting Table</strong><small>4 planks → 1 table</small></div>
+      <div class="recipe"><div class="item">🔥</div><strong>Furnace</strong><small>8 cobblestone → 1 furnace</small></div>
+      <div class="recipe"><div class="item">🕯️</div><strong>Torch</strong><small>1 coal + 1 stick → 4 torches</small></div>
+    </div>
+    <p class="notice">Recipe descriptions are simplified starter examples. Check your Minecraft edition and version for exact recipe details.</p>
+  </section>
+  <section id="servers">
+    <div class="section-head"><div><h2>Server discovery</h2><p>Example server cards — replace these with verified listings before publishing.</p></div></div>
+    <div class="server"><div class="server-left"><div class="server-icon">🌐</div><div><h3>Community Survival</h3><small>Survival • Friendly community</small></div></div><span class="online">Example listing</span></div>
+    <div class="server"><div class="server-left"><div class="server-icon">🏹</div><div><h3>Arena Practice</h3><small>PvP • Practice matches</small></div></div><span class="online">Example listing</span></div>
+    <div class="server"><div class="server-left"><div class="server-icon">🧱</div><div><h3>Creative Builders</h3><small>Creative • Build showcases</small></div></div><span class="online">Example listing</span></div>
+  </section>
+  <section id="quiz">
+    <div class="quizbox"><div><div class="eyebrow">⚡ QUICK CHALLENGE</div><h3>Ready to test your Minecraft knowledge?</h3><p id="question">Which tool is commonly used to mine stone faster?</p><div id="quizResult" class="quiz-result" aria-live="polite"></div></div>
+      <div class="quiz-actions"><button class="btn secondary" onclick="answer(false)">🪓 Axe</button><button class="btn primary" onclick="answer(true)">⛏️ Pickaxe</button></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 BLOCKBASE. Made for the Minecraft community.</span><span>Unofficial fan project • Not affiliated with Mojang or Microsoft.</span></div></footer>
+<script>
+const search=document.getElementById('guideSearch');
+search.addEventListener('input',()=>{let q=search.value.toLowerCase(),shown=0;document.querySelectorAll('#guideGrid .card').forEach(c=>{let match=(c.dataset.search+' '+c.innerText).toLowerCase().includes(q);c.style.display=match?'':'none';if(match)shown++});document.getElementById('noResults').hidden=shown!==0});
+function answer(correct){const r=document.getElementById('quizResult');r.textContent=correct?'Correct! A pickaxe is the usual tool for mining stone. 🎉':'Not quite! A pickaxe is the usual tool for mining stone. Try again!';}
+</script>
+</body></html>
